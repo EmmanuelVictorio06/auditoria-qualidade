@@ -26,13 +26,14 @@ O sistema simula a atividade de verificação de conformidade com base em pergun
 ---
 
 ## 📂 Estrutura do Projeto
-
+```
   auditoria-qualidade/
   ├── auditoria.js # Código principal
   ├── checklist.json # Perguntas da auditoria
   ├── ncs.json # Registro das NCs geradas
   ├── package.json # Configuração de dependências
   └── package-lock.json # Detalhes técnicos das dependências
+```
 
 ---
 
