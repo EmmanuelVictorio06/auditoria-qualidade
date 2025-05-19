@@ -1,0 +1,6 @@
+[
+  { "id": 1, "pergunta": "O plano tem identificação do projeto?" },
+  { "id": 2, "pergunta": "As partes interessadas estão descritas?" },
+  { "id": 3, "pergunta": "Há cronograma definido?" },
+  { "id": 4, "pergunta": "Riscos foram analisados?" }
+]

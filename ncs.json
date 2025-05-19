@@ -1,0 +1,14 @@
+[
+  {
+    "id": "NC-001",
+    "itemCheckId": 2,
+    "descricao": "As partes interessadas estão descritas?",
+    "status": "PENDENTE"
+  },
+  {
+    "id": "NC-002",
+    "itemCheckId": 4,
+    "descricao": "Riscos foram analisados?",
+    "status": "PENDENTE"
+  }
+]
