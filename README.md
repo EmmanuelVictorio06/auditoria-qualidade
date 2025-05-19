@@ -77,6 +77,7 @@ node auditoria.js
 - NC-002: Riscos foram analisados?
 
 💾 NCs salvas no arquivo ncs.json
+
 🔚 Auditoria finalizada.
 
 ---
