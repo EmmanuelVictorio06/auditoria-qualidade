@@ -27,12 +27,12 @@ O sistema simula a atividade de verificação de conformidade com base em pergun
 
 ## 📂 Estrutura do Projeto
 
-auditoria-qualidade/
-├── auditoria.js # Código principal
-├── checklist.json # Perguntas da auditoria
-├── ncs.json # Registro das NCs geradas
-├── package.json # Configuração de dependências
-└── package-lock.json # Detalhes técnicos das dependências
+  auditoria-qualidade/
+  ├── auditoria.js # Código principal
+  ├── checklist.json # Perguntas da auditoria
+  ├── ncs.json # Registro das NCs geradas
+  ├── package.json # Configuração de dependências
+  └── package-lock.json # Detalhes técnicos das dependências
 
 ---
 
@@ -41,7 +41,6 @@ auditoria-qualidade/
 ### 1. Instale o Node.js (se ainda não tiver):
 ➡️ https://nodejs.org
 
----
 
 ### 2. Libere a execução de scripts no PowerShell (apenas no Windows):
 
@@ -51,7 +50,6 @@ Abra o PowerShell como **Administrador** e digite:
 Set-ExecutionPolicy RemoteSigned
 Digite S quando perguntado.
 ```
----
 
 ### 3. Instale o projeto
 
@@ -60,12 +58,10 @@ Abra o terminal no VS Code e execute:
 ```
 npm install
 ```
----
 ### 4. Execute a auditoria
 ```
 node auditoria.js
 ```
----
 ### 5. Exemplo de Execução:
 
 📋 Iniciando Auditoria
