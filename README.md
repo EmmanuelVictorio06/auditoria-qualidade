@@ -49,6 +49,46 @@ Abra o PowerShell como **Administrador** e digite:
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
+Digite S quando perguntado.
+```
+---
+
+### 3. Instale o projeto
+
+Abra o terminal no VS Code e execute:
+
+```
+npm install
+```
+---
+### 4. Execute a auditoria
+```
+node auditoria.js
+```
+---
+### 5. Exemplo de Execução:
+
+📋 Iniciando Auditoria
+
+1. O plano tem identificação do projeto? [SIM/NÃO/N/A]
+2. As partes interessadas estão descritas? [SIM/NÃO/N/A]
+...
+
+✅ Aderência: 75%
+❌ Não Conformidades encontradas:
+- NC-001: As partes interessadas estão descritas?
+- NC-002: Riscos foram analisados?
+
+💾 NCs salvas no arquivo ncs.json
+🔚 Auditoria finalizada.
+
+---
+
+## 👨‍💼 Autor
+- Projeto desenvolvido por: Emmnauel Victorio, Misael Rodrigues e Otávio Augusto.
+- Disciplina Qualidade de Software – Engenharia de Software
+- Professor(a): Kelly Christine Landolfi Bettio
+- Instituição: PUCPR
 
 
 
