@@ -19,21 +19,29 @@ let ncs = [];
     respostas.push({ ...item, resposta });
 
     if (resposta === 'NÃO') {
-      const { responsavel, prazo, observacoes } = await inquirer.prompt([
+      console.log(`\n📝 Preencha os dados da Não Conformidade referente ao item: "${item.pergunta}"`);
+
+      const ncDados = await inquirer.prompt([
         {
           type: 'input',
           name: 'responsavel',
-          message: 'Informe o responsável pela resolução da NC:'
+          message: 'Responsável pela resolução:'
         },
         {
           type: 'input',
           name: 'prazo',
-          message: 'Informe o prazo para resolução (YYYY-MM-DD):'
+          message: 'Prazo para resolução (DD-MM-YYYY):'
+        },
+        {
+          type: 'input',
+          name: 'dataResolucao',
+          message: 'Data da resolução (DD-MM-YYYY, deixe em branco se ainda não resolvido):',
+          default: ''
         },
         {
           type: 'input',
           name: 'observacoes',
-          message: 'Observações (opcional):'
+          message: 'Observações adicionais (opcional):'
         }
       ]);
 
@@ -41,13 +49,14 @@ let ncs = [];
         id: 'NC-' + (ncs.length + 1).toString().padStart(3, '0'),
         itemCheckId: item.id,
         descricao: item.pergunta,
-        status: 'PENDENTE',
-        responsavel,
-        prazo,
+        status: ncDados.dataResolucao.trim() ? 'RESOLVIDA' : 'PENDENTE',
+        responsavel: ncDados.responsavel,
+        prazo: ncDados.prazo,
         dataRegistro: new Date().toISOString().split('T')[0],
-        dataResolucao: '',
-        observacoes
+        dataResolucao: ncDados.dataResolucao,
+        observacoes: ncDados.observacoes
       };
+
       ncs.push(nc);
     }
   }
@@ -58,16 +67,17 @@ let ncs = [];
 
   console.log(`\n✅ Aderência: ${aderencia}%`);
 
-  if (ncs.length) {
-    console.log('\n❌ Não Conformidades encontradas:');
-    ncs.forEach(nc => {
-      console.log(`- ${nc.id}: ${nc.descricao} (Responsável: ${nc.responsavel}, Prazo: ${nc.prazo})`);
-    });
+  fs.writeFileSync('./ncs.json', JSON.stringify(ncs, null, 2));
 
-    fs.writeFileSync('./ncs.json', JSON.stringify(ncs, null, 2));
-    console.log('\n💾 NCs salvas no arquivo ncs.json');
+  if (ncs.length) {
+    console.log('\n❌ Não Conformidades registradas:');
+    ncs.forEach(nc => {
+      console.log(`- ${nc.id}: ${nc.descricao} (Responsável: ${nc.responsavel}, Status: ${nc.status})`);
+    });
+    console.log('\n💾 Arquivo "ncs.json" atualizado com sucesso!');
   } else {
     console.log('\n🎉 Nenhuma não conformidade encontrada!');
+    console.log('\n💾 Arquivo "ncs.json" foi limpo para refletir isso.');
   }
 
   console.log('\n🔚 Auditoria finalizada.\n');
