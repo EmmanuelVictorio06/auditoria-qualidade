@@ -87,6 +87,14 @@ node auditoria.js
 - Disciplina Qualidade de Software – Engenharia de Software
 - Professor(a): Kelly Christine Landolfi Bettio
 - Instituição: PUCPR
+---
+## 🖼 Exemplos de Gráficos
+- 📊 Gráfico 1 – Colisões na Inserção
+![grafico1_colisoes_insercao](https://github.com/user-attachments/assets/c68fe19a-7880-4f3d-b8e9-311eb6aead55)
+- ⏱️ Gráfico 2 – Tempo Médio de Busca
+![grafico2_tempo_busca](https://github.com/user-attachments/assets/ca64e8da-6fff-4f2c-a661-9ac98fd241ee)
+- 🔍 Gráfico 3 – Comparações Médias de Busca
+![grafico3_comparacoes_busca](https://github.com/user-attachments/assets/d5818b1a-8102-4335-8a0d-400e9469f24e)
 
 
 
